@@ -64,30 +64,26 @@ const Arrow = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-
 `;
 
 const ArrowDown = styled.div`
-    position: absolute;
-    top: 42%;
-    left: 10px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 10px solid red;
-
+    border: solid #3faffa;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-top: 50%;
 `;
 
 const ArrowUp = styled.div`
-    position: absolute;
-    top: 35%;
-    left: 10px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 10px solid red;
+    border: solid #3faffa;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-top: 60%;
 
 `;
 
@@ -120,12 +116,13 @@ export default class Select extends Component {
             <DropDownContainer>
               <DropDownHeader onClick={this.toggling}>
                 {this.state.selectedItem || this.state.defaultSelected}
-                <Arrow>{
-                    this.state.isOpen ? 
-                     <ArrowUp/>
+                <Arrow>
+                {
+                    this.state.isOpen 
+                    ? <ArrowUp/>
                     : <ArrowDown/>
-                
-                }</Arrow>
+                }
+                </Arrow>
               </DropDownHeader>
               { 
                 this.state.isOpen &&
