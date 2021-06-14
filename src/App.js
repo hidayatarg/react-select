@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <h1>Custom Select</h1>
       {/* <div style={{ margin: "16px", position: "relative" }} /> */}
-      <SelectBox items={options} />
+      {/* <SelectBox items={options} /> */}
       <h1>2.Custom Select</h1>
       <Select options={options}/>
 
